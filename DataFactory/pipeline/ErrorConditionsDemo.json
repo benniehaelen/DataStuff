@@ -118,7 +118,8 @@
 						"DataFactoryName": "@{pipeline().DataFactory}",
 						"PipelineName": "@{pipeline().Pipeline}",
 						"ErrorMessage": "@{activity('Get Metadata from Data Lake File').Error.message}",
-						"EmailTo": "@pipeline().parameters.param_email_address"
+						"EmailTo": "@pipeline().parameters.param_email_address",
+						"Subject": "Error during Data Factory Pipeline Execution"
 					}
 				}
 			}
