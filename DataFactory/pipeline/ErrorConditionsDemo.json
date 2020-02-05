@@ -87,8 +87,41 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Send Failure Email",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "Get Metadata from Data Lake File",
+						"dependencyConditions": [
+							"Failed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://prod-13.westus2.logic.azure.com:443/workflows/b4eb841787bc41b48f700f49b2d69b05/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Tn7uEqFlKKm-d3eohaUvudbEISTMp6ZKr1gyrEu0DLU",
+					"method": "POST",
+					"headers": {
+						"Content-Type": "application/json"
+					}
+				}
 			}
 		],
+		"parameters": {
+			"param_email_address": {
+				"type": "string",
+				"defaultValue": "bhaelen@gmail.com"
+			}
+		},
 		"annotations": []
 	}
 }
