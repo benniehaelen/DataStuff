@@ -1,0 +1,7 @@
+{
+	"name": "ErrorConditionsDemo",
+	"properties": {
+		"description": "This pipeline illustrates a number of error conditions",
+		"annotations": []
+	}
+}
