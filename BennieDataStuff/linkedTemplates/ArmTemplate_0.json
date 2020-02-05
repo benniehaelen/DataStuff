@@ -247,7 +247,7 @@
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
-								"ErrorMessage": "@{activity(‘GetMetadata from Data Lake File’).Error.message}",
+								"ErrorMessage": "@{activity('GetMetadata from Data Lake File').Error.message}",
 								"EmailTo": "@pipeline().parameters.param_email_address"
 							}
 						}
